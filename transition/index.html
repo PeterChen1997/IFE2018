@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>No.1 - 制作一个简单的菜单动画效果</title>
+  <style>
+    .center {
+      width: 240px;
+      margin: auto;
+      text-align: center;
+    }
+    
+    .hr {
+      height: 3px;
+      transition: width 0.3s ease-in-out 0s;
+    }
+    .hr1 {
+      background-color: white;
+      width:120px;
+    }
+    .hr2 {
+      background-color: blue;
+      width:0px;
+    }
+
+    .p {
+      transition: all 0.3s ease-in-out 0s;
+    }
+
+    .is-active-hr1 {
+      width: 0;
+    }
+    .is-active-hr2 {
+      width: 120px;
+    }
+    .is-active-p {
+      color: blue;
+    }
+
+    .hr-container {
+      display: flex;
+    }
+
+    .blue {
+      width: 120px;
+      background-color: blue;
+    }
+    .white {
+      width: 120px;
+    }
+  </style>
+</head>
+<body>
+  <div class="center">
+    <p class="p">千万不要尝试git clean -d -fx ""</p>
+    <div class="hr-container">
+      <div class="blue">
+        <div class="hr1 hr"></div>
+      </div>
+      <div class="white">
+        <div class="hr2 hr"></div>
+      </div>
+    </div>
+    <br>
+    <button>真的</button>
+  </div>
+
+  <script>
+    let button = document.querySelector('button')
+    let p = document.querySelector('p')
+    let hr1 = document.querySelector('.hr1')
+    let hr2 = document.querySelector('.hr2')
+    button.addEventListener('click', () => {
+      hr1.classList.toggle('is-active-hr1')
+      hr2.classList.toggle('is-active-hr2')
+      p.classList.toggle('is-active-p')
+      console.log('click')
+    })
+  </script>
+</body>
+</html>
