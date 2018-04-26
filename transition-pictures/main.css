@@ -1,0 +1,55 @@
+.pic1.is-now-active {
+  animation: pic1 0.5s ease-out 0s;
+}
+@keyframes pic1 {
+  from {
+    transform: translateX(-500px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+.pic2.is-now-active {
+  animation: pic2 0.5s ease-out 0s;
+}
+@keyframes pic2 {
+  from {
+    transform: translateY(350px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+.pic3.is-now-active {
+  animation: pic3 1s ease-in 0s;
+}
+@keyframes pic3 {
+  from {
+    transform: scale(0.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.pic4.is-now-active {
+  animation: pic4 1s ease-out 0s;
+}
+@keyframes pic4 {
+  from {
+    transform: scale(2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.pic5.is-now-active {
+  animation: pic5 0.7s ease-in-out 0s;
+}
+@keyframes pic5 {
+  from {
+    transform: scale(0.1) rotate(-360deg);
+  }
+  to {
+    transform: scale(1) rotate(0deg);
+  }
+}

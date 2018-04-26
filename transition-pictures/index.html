@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>No.6 - 利用 CSS animation 制作一个炫酷的 Slider</title>
+  <link rel="stylesheet" href="./main.css">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    .container {
+      height: 100vh;
+      background-color: grey;
+    }
+    .container > img {
+      visibility: hidden;
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+    }
+    img.is-now-active,img.is-actived {
+      visibility: visible;
+    }
+    
+    nav {
+      position: absolute;
+      bottom: 2vh;
+      display: flex;
+      height: 14vh;
+      width: 100%;
+      justify-content: space-around;
+    }
+    nav > img {
+      height: 100%;
+      opacity: 0.5;
+    }
+    nav > img:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="./imgs/1.jpg" class="pic1 is-actived">
+    <img src="./imgs/2.jpg" class="pic2">
+    <img src="./imgs/3.jpg" class="pic3">
+    <img src="./imgs/4.jpg" class="pic4">
+    <img src="./imgs/5.jpg" class="pic5">
+  </div>
+  
+  <nav>
+    <img src="./imgs/1.jpg" data-id="1">
+    <img src="./imgs/2.jpg" data-id="2">
+    <img src="./imgs/3.jpg" data-id="3">
+    <img src="./imgs/4.jpg" data-id="4">
+    <img src="./imgs/5.jpg" data-id="5">
+  </nav>
+
+  <script>
+    let nav = document.querySelector('nav')
+    let imgs = document.querySelectorAll('.container > img')
+    let activeId = 1
+    
+    function handleClick(e) {
+      let { id } = e.target.dataset
+      if(id) {
+        console.log(imgs[activeId - 1].classList)
+        imgs[activeId - 1].classList.add('is-actived')
+        imgs[activeId - 1].classList.remove('is-now-active')
+        activeId = id
+        imgs[activeId - 1].classList.add('is-now-active')
+        imgs[activeId - 1].classList.remove('is-actived')
+      }
+    }
+
+    nav.addEventListener('click', handleClick)
+  </script>
+
+</body>
+</html>
