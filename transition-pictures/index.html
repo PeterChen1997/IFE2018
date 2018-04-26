@@ -21,10 +21,14 @@
       height: 100vh;
       width: 100vw;
     }
-    img.is-now-active,img.is-actived {
+    img.is-now-active {
       visibility: visible;
+      z-index: 4;
     }
-    
+    img.is-actived {
+      visibility: visible;
+      z-index: 3;
+    }
     nav {
       position: absolute;
       bottom: 2vh;
@@ -32,6 +36,7 @@
       height: 14vh;
       width: 100%;
       justify-content: space-around;
+      z-index: 99;
     }
     nav > img {
       height: 100%;
@@ -44,19 +49,19 @@
 </head>
 <body>
   <div class="container">
-    <img src="./imgs/1.jpg" class="pic1 is-actived">
-    <img src="./imgs/2.jpg" class="pic2">
-    <img src="./imgs/3.jpg" class="pic3">
-    <img src="./imgs/4.jpg" class="pic4">
-    <img src="./imgs/5.jpg" class="pic5">
+    <img src="./dist/imgs/1.jpg" class="pic1 is-actived">
+    <img src="./dist/imgs/2.jpg" class="pic2">
+    <img src="./dist/imgs/3.jpg" class="pic3">
+    <img src="./dist/imgs/4.jpg" class="pic4">
+    <img src="./dist/imgs/5.jpg" class="pic5">
   </div>
   
   <nav>
-    <img src="./imgs/1.jpg" data-id="1">
-    <img src="./imgs/2.jpg" data-id="2">
-    <img src="./imgs/3.jpg" data-id="3">
-    <img src="./imgs/4.jpg" data-id="4">
-    <img src="./imgs/5.jpg" data-id="5">
+    <img src="./dist/imgs/1.jpg" data-id="1">
+    <img src="./dist/imgs/2.jpg" data-id="2">
+    <img src="./dist/imgs/3.jpg" data-id="3">
+    <img src="./dist/imgs/4.jpg" data-id="4">
+    <img src="./dist/imgs/5.jpg" data-id="5">
   </nav>
 
   <script>
