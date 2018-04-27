@@ -1,0 +1,58 @@
+<template>
+  <div class="container">
+    <div class="infos">
+      <div class="detail">姓名（string）{{ name }}</div>
+      <div class="detail">年龄（number）{{ age }}</div>
+      <div class="detail">简介（string）{{ des }}</div>
+    </div>
+    <br>
+    <div class="control">
+      <span><b>信息：</b></span>
+      <sm-button variants="danger" on-click="handleClick">移除信息</sm-button>
+    </div>
+    <br>
+    <div class="inputs">
+      <label for="name">姓名：</label><input type="text" id="name" value="{= name =}"><br />
+      <label for="age">年龄：</label><input type="number" id="age" value="{= age =}"><br />
+      <label for="des">简介：</label><input type="text" id="des" value="{= des =}">
+    </div>
+  </div>
+</template>
+
+<script>
+import { DataTypes } from 'san'
+import { Button } from 'san-mui'
+import 'san-mui/lib/index.css'
+
+export default {
+  components: {
+    'sm-button': Button
+  },
+  // dataTypes: {
+  //   name: DataTypes.string,
+  //   age: DataTypes.number,
+  //   des: DataTypes.string
+  // },
+  handleClick: function(e) {
+    this.data.set('name', '')
+    this.data.set('age', '')
+    this.data.set('des', '')
+  }
+}
+</script>
+
+<style>
+  input {
+    border: none;
+    border-bottom: 1px solid #aaa;
+  }
+  .infos {
+    display: flex;
+  }
+  .infos > div {
+    width: 200px;
+    border: 1px solid #444;
+    padding: 5px;
+    margin-right: 10px;
+  }
+</style>
