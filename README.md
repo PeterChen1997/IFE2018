@@ -8,6 +8,7 @@ https://blog.peterchen.club
 
 - [1.2 用webpack4 / parcel快速搭建开发san helloworld](./1.2/dist/index.html)
 - [2.1 数据操作](./2.1/dist/index.html)
+- [2.2 条件和循环](./2.2/dist/index.html)
 - [No.1 - 制作一个简单的菜单动画效果](./transition/index.html)
 - [No.2 - 初步接触 CSS 2D 变形](./transform/index.html)
 - [No.3 - CSS transition 和 CSS transform 配合制作动画](./transition-transform/index.html)
