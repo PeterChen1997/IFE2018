@@ -12,13 +12,13 @@
       </sm-tr>
     </sm-thead>
     <sm-tbody>
-        <sm-tr san-for="item in lists">
+        <sm-tr san-for="item, index in lists">
           <sm-td>{{item.name}}</sm-td>
-          <sm-td s-if="item.status">{{item.state}}</sm-td>
+          <sm-td s-if="item.status === '合格' || item.status === '不合格'">{{item.status}}</sm-td>
           <sm-td s-else>待审核</sm-td>
           <sm-td>
-            <button s-if="item.status" on-click="handleClick" data-id="{{item.id}}">删除</button>
-            <button s-else on-click="handleClick" data-id="{{item.id}}">审核</button>
+            <button s-if="item.status === '合格' || item.status === '不合格'" on-click="handleDelete(index)" data-id="{{item.id}}">删除</button>
+            <button s-else on-click="handleClick(index)">审核</button>
           </sm-td>
         </sm-tr>
       </sm-tbody>
@@ -41,56 +41,31 @@ export default {
       'sm-thead': THead,
       'sm-tfoot': TFoot,
   },
-  handleClick: function(e) {
-    let id = Number(e.target.dataset.id)
-    let lists = this.data.get('lists')
-    console.log(lists)
-    console.log(id)
-    // 筛选与删除选中
-    lists = lists.filter(list => {
-      if(list.id === id) {
-        if(!list.status) {
-          list.status = true
-          list.state = '合格'
-        } else {
-          return false
-        }
-      }
-      return true
-    })
-    
-    this.data.set('lists', lists)
+  handleDelete: function(index) {
+    this.data.removeAt('lists', index)
+  },
+  handleClick: function(index) {
+    this.data.set("lists[" + index + "].status", "合格");
   },
   handleAdd: function() {
-    console.log('add')
-    this.data.set('total', this.data.get('total') + 1)
     this.data.push('lists', {
-      id: this.data.get('total'),
       name: 'Peter',
-      status: true,
-      state: '合格'
+      status: '合格',
     })
   },
   initData() {
     return {
-      total: 3,
       lists: [
         {
-          id: 1,
           name: '张三',
-          status: true,
-          state: '不合格'
+          status: '不合格',
         },
         {
-          id: 2,
           name: '李四',
-          status: false,
         },
         {
-          id: 3,
           name: '王五',
-          status: true,
-          state: '合格'
+          status: '合格',
         }
       ]
     }
