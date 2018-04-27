@@ -2,32 +2,3 @@
 # yarn lockfile v1
 
 
-classnames@^2.2.5:
-  version "2.2.5"
-  resolved "http://registry.npm.taobao.org/classnames/download/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
-
-dom-align@^1.6.2:
-  version "1.6.7"
-  resolved "http://registry.npm.taobao.org/dom-align/download/dom-align-1.6.7.tgz#6858138efb6b77405ce99146d0be5e4f7282813f"
-
-kolor@^1.1.9:
-  version "1.1.9"
-  resolved "http://registry.npm.taobao.org/kolor/download/kolor-1.1.9.tgz#bf7678f1848a3dcb5a947d41f626db59163385b6"
-
-moment@^2.18.1:
-  version "2.22.1"
-  resolved "http://registry.npm.taobao.org/moment/download/moment-2.22.1.tgz#529a2e9bf973f259c9643d237fda84de3a26e8ad"
-
-san-mui@^1.1.1:
-  version "1.1.1"
-  resolved "http://registry.npm.taobao.org/san-mui/download/san-mui-1.1.1.tgz#39e189cd8454bae830ce0ccf9ff44c6f59a69bfb"
-  dependencies:
-    classnames "^2.2.5"
-    dom-align "^1.6.2"
-    kolor "^1.1.9"
-    moment "^2.18.1"
-    san "^3.5.1"
-
-san@^3.5.1:
-  version "3.5.7"
-  resolved "http://registry.npm.taobao.org/san/download/san-3.5.7.tgz#c304863ffcb9eceb195f31269eae5a6be53fb1e9"

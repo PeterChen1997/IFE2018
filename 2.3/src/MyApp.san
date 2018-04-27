@@ -1,0 +1,46 @@
+<template>
+<div>
+  <h2>Control by style</h2>
+  <div
+    id="block"
+    on-click="handleClick"
+    style='{{isClick ? "background:blue;width:100px;height:100px;" : "background:red;width:100px;height:100px;"}}'
+  ></div>
+  <h2>Control by class</h2>
+  <div
+    id="block2"
+    on-click="handleClick2"
+    class="{{isClick2 ? 'is-click' : 'not-click'}}"
+  ></div>
+</div>
+</template>
+
+<script>
+
+export default {
+  initData() {
+    return {
+      isClick: false
+    } 
+  },
+  handleClick: function() {
+    this.data.set('isClick', !this.data.get('isClick'))
+  },
+  handleClick2: function() {
+    this.data.set('isClick2', !this.data.get('isClick2'))
+  }
+}
+</script>
+
+<style>
+  .not-click {
+    background:red;
+    width:100px;
+    height:100px;
+  }
+  .is-click {
+    background:blue;
+    width:100px;
+    height:100px;
+  }
+</style>
