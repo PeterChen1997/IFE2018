@@ -41,6 +41,7 @@ export default {
       'sm-thead': THead,
       'sm-tfoot': TFoot,
   },
+  // 这里使用reducer的方法重新写一个lists进行修改，会出现状态不同步的BUG，尴尬...
   handleDelete: function(index) {
     this.data.removeAt('lists', index)
   },
