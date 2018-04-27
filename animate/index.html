@@ -69,9 +69,20 @@
                 border: none;
                 border-bottom: solid 1px #ddd;
             }
-            .form__input:focus {
-                background-position: 0 0;
-                color: #444;
+            .form__label::after{
+                content: '';
+                position: absolute;
+                bottom:0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                opacity: 0;
+                background: #0d8aee;
+                transition: 0.2s all ease-in-out;
+            }
+            .form__input:focus +.form__label::after{
+                width: 100%;
+                opacity: 1;
             }
             .form__label {
                 position: absolute;
@@ -92,10 +103,6 @@
               transition: all 0.2s ease 0s;
               transform-origin: top left;
               transform: scale(0.8) translateY(-10px);
-            }
-            .form__input:focus {
-              animation: fadeIn 0.5s ease 0s;
-              border-bottom: 2px solid #2196f3;
             }
             .btn {
                 width: 100%;
@@ -146,7 +153,6 @@
             </section>
         </section>
     </body>
-    <script src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/jquery/jquery-1.10.2.min_65682a2.js"></script>
     <script>
       let email = document.querySelector('#email')
       let password = document.querySelector('#password')
