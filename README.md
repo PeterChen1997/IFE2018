@@ -4,7 +4,11 @@
 
 https://blog.peterchen.club
 
-## 学习目录
+## 在线Demo
+
+https://peterchen1997.github.io/IFE2018/
+
+## 代码目录
 
 - [1.2 用webpack4 / parcel快速搭建开发san helloworld](./1.2/dist/index.html)
 - [2.1 数据操作](./2.1/dist/index.html)
@@ -16,3 +20,4 @@ https://blog.peterchen.club
 - [No.4 - 3D 空间的卡片翻转动效](./transition-rotate/index.html)
 - [No.5 - 纯 CSS 制作绕中轴旋转的立方体](./cube/index.html)
 - [No.6 - 利用 CSS animation 制作一个炫酷的 Slider](./transition-pictures/index.html)
+- [No.7 - 使用 animate.css 实现一个优雅的登录框](./animate/index.html)
